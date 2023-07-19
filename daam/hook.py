@@ -116,7 +116,7 @@ class UNetCrossAttentionLocator(ModuleLocator[Attention]):
                         blocks.append(transformer_block.attn2)
 
                 blocks = [b for idx, b in enumerate(blocks) if self.restrict is None or idx in self.restrict]
-                names = [f'{name}-attn-{i}' for i in range(len(blocks)) if self.restrict is None or i in self.restrict]
+                names = [f'{name}-attn-{i}' for i in range(len(blocks))]
                 blocks_list.extend(blocks)
                 self.layer_names.extend(names)
 
